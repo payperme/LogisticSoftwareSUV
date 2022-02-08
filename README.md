@@ -27,6 +27,19 @@ Hi,  I'm development a logistic software, all open source and based on JS and HT
 ```
 # apt-get install mariadb-server mariadb-client
 ```
+And we need a databa, user and password, let's go
+  - Firts, import the tables to MariaDB
+```
+mysql < /usr/share/phpmyadmin/sql/create_tables.sql
+```
+  - Then, enter to MariaDB console, with _mariadb -u root -p_ or _mysql -u root -p_ and write the following command:
+```
+# MariaDB [(none)]> GRANT SELECT, INSERT, UPDATE, DELETE ON phpmyadmin.* TO 'pma'@'localhost' IDENTIFIED BY 'password';
+# MariaDB [(none)]> CREATE USER myadmin;
+# MariaDB [(none)]> GRANT ALL PRIVILEGES ON *.* TO 'myadmin'@'localhost' IDENTIFIED BY 'password' WITH GRANT OPTION;
+# MariaDB [(none)]> FLUSH PRIVILEGES;
+# MariaDB [(none)]> EXIT;
+```
 10. Install PHPmyAdmin
 ```
 # wget https://files.phpmyadmin.net/phpMyAdmin/5.1.2/phpMyAdmin-5.1.2-all-languages.zip
@@ -39,16 +52,16 @@ Hi,  I'm development a logistic software, all open source and based on JS and HT
 # apt-get install pwgen -y
 # pwgen -s 32 1
 ```
-Output
+  - Output
 ```
 eWb5N6kMJyJAhHM0cfpEMYQoYxueyU1T
 ```
-Edit config file
+  - Edit config file
 ```
 # nano /usr/share/phpmyadmin/config.inc.php
 $cfg['blowfish_secret'] = 'eWb5N6kMJyJAhHM0cfpEMYQoYxueyU1T';
 ```
-Add the next line on directories
+  - Add the next line on directories
 ```
 $cfg['TempDir'] = '/var/lib/phpmyadmin/tmp';
 ```
@@ -56,7 +69,7 @@ $cfg['TempDir'] = '/var/lib/phpmyadmin/tmp';
 ```
 nano /etc/apache2/conf-enabled/phpmyadmin.conf
 ```
-and add the next content to the file _phpmyadmin.conf_
+  - and add the next content to the file _phpmyadmin.conf_
 ```
 Alias /phpmyadmin /usr/share/phpmyadmin
 
@@ -116,3 +129,10 @@ Alias /phpmyadmin /usr/share/phpmyadmin
     Require all denied
 </Directory>
 ```
+12. Need to restart the apache2 server
+```
+# systemctl restart apache2
+```
+13. Finally, only open a browser in your LAN Network, and write the following URL with your data
+```
+http://ipaddress/phpmyadmin

@@ -8,7 +8,7 @@ Base package installation:
 3. Create a virtual machine based on Debian, we only need a Bridge Network, check it on settings.
 4. When you finish all the installation process with the VM, we need to install all packages.
 5. Install SSH Server (i prefer to work on)
-# apt-get install openssh-server
+~$ apt-get install openssh-server
 6. Then, install Apache2 (if you like another www server, try it)
 # apt-get install apache2
 7. Check if the Apache2 server it's correctly working

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Alta Clientes</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="topbar">
+		<a href="https://imgbb.com/"><img src="https://i.ibb.co/cyzWBJf/killa-pizza.png" alt="killa-pizza" border="0"></a>
+		<div class="topphrase">Tracking System Logistic</div>
+	</div>
+
+	<ul id="navbar">
+		<li><a class="active" href="index.html">Home</a></li>
+		<li class="dropdown">
+			<a class="dropbtn" href="javascript:void(0)">Cliente</a>
+			<div class="dropdown-content">
+				<a href="alta_cliente.html">Alta</a>
+				<a href="#">Busqueda</a>
+				<a href="#">Modificar</a>
+			</div>
+		</li>
+		<li class="dropdown">
+			<a class="dropbtn" href="javascript:void(0)">Guia</a>
+			<div class="dropdown-content">
+				<a href="#">Alta</a>
+				<a href="#">Busqueda</a>
+				<a href="#">Modificar</a>
+			</div>
+		</li>
+    <li class="dropdown">
+			<a class="dropbtn" href="javascript:void(0)">Paqueteria</a>
+			<div class="dropdown-content">
+				<a href="#">Alta</a>
+				<a href="#">Busqueda</a>
+				<a href="#">Modificar</a>
+			</div>
+		</li>
+		<li><a href="">Ayuda</a></li>
+	</ul>
+
+<!--<div class="header">
+
+</div> -->
+
+<h3>Alta Cliente</h3>
+
+<div class="container">
+  <form action="/action_page.php">
+    <label for="user">Nombre Cliente</label>
+    <input type="text" id="user" name="user" placeholder="Nombre cliente">
+
+    <label for="StreetNum">Calle y Número</label>
+    <input type="text" id="StreetNum" name="StreetNum" placeholder="Calle numero">
+
+    <label for="Col">Colonia</label>
+    <input type="text" id="Col" name="Col" placeholder="Colonia">
+
+    <label for="City">Ciudad</label>
+    <input type="text" id="City" name="City" placeholder="Ciudad">
+
+    <label for="state">Estado</label>
+    <select id="state" name="state">
+      <option value="Aguascaliente">Aguascaliente</option>
+      <option value="Baja California">Baja California</option>
+      <option value="Baja California Sur">Baja California Sur</option>
+      <option value="Campeche">Campeche</option>
+      <option value="CDMX">CDMX</option>
+      <option value="Chiapas">Chiapas</option>
+      <option value="Chihuahua">Chihuahua</option>
+      <option value="Coahuila">Coahuila</option>
+      <option value="Colima">Colima</option>
+      <option value="Durango">Durango</option>
+      <option value="Guanajuato">Guanajuato</option>
+      <option value="Guerrero">Guerrero</option>
+      <option value="Hidalgo">Hidalgo</option>
+      <option value="Jalisco">Jalisco</option>
+      <option value="Mexico">México</option>
+      <option value="Michoacan">Michoacán</option>
+      <option value="Morelos">Morelos</option>
+      <option value="Nayarit">Nayarit</option>
+      <option value="Nuevo Leon">Nuevo León</option>
+      <option value="Oaxaca">Oaxaca</option>
+      <option value="Puebla">Puebla</option>
+      <option value="Queretaro">Querétaro</option>
+      <option value="Quintana Roo">Quintana Roo</option>
+      <option value="San Luis Potosi">San Luis Potosí</option>
+      <option value="Sinaloa">Sinaloa</option>
+      <option value="Sonora">Sonora</option>
+      <option value="Tabasco">Tabasco</option>
+      <option value="Tamaulipas">Tamaulipas</option>
+      <option value="Tlaxcala">Tlaxcala</option>
+      <option value="Veracruz">Veracruz</option>
+      <option value="Yucatán">Yucatán</option>
+      <option value="Zacatecas">Zacatecas</option>
+    </select>
+
+    <label for="Num">Télefono</label>
+    <input type="text" id="Num" name="Num" placeholder="Teléfono de contacto">
+
+    <label for="CP">Código Postal</label>
+    <input type="text" id="CP" name="CP" placeholder="Codigo postal">
+
+    <input type="submit" value="Enviar">
+  </form>
+</div>
+
+<div class="footer">
+  <p>Logistic Software EC</p>
+</div>
+  <script src="myScript.js"></script>
+
+</body>
+</html>

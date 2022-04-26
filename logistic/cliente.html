@@ -25,7 +25,7 @@
   <body>
 
 <div class="container mt-4 shadow-lg p-3 mb-5 bg-body rounded">
-  <button id="btnCreate" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCliente">Crear cliente</button>
+  <button id="btnCreate" type="button" class="btn btn-primary" data-bs-toggle="modal">Crear cliente</button>
   <table id="tablaCliente" class="table mt-2 table-bordered table-striped">
     <thead>
       <tr class="text-center">
@@ -37,6 +37,7 @@
         <th>Estado</th>
         <th>Teléfono</th>
         <th>C.P.</th>
+        <th>Acciones</th>
       </tr>
     </thead>
     <tbody>
@@ -45,7 +46,7 @@
 </div>
 
 
-<div id="modalCliente" class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div id="modalCliente" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header bg-primary text-white">
@@ -55,32 +56,32 @@
       <div class="modal-body">
         <form>
           <div class="mb-3">
-            <label for="cliente" class="col-form-label">Nombre Cliente:</label>
-            <input type="text" class="form-control" id="cliente" autofocus>
+            <label for="userName" class="col-form-label">Nombre Cliente:</label>
+            <input type="text" class="form-control" id="userName" autofocus>
           </div>
           <div class="mb-3">
-            <label for="numStreet" class="col-form-label">Dirección:</label>
-            <input type="text" class="form-control" id="numStreet">
+            <label for="streetNum" class="col-form-label">Dirección:</label>
+            <input type="text" class="form-control" id="streetNum">
           </div>
           <div class="mb-3">
-            <label for="colonia" class="col-form-label">Colonia:</label>
-            <input type="text" class="form-control" id="colonia">
+            <label for="col" class="col-form-label">Colonia:</label>
+            <input type="text" class="form-control" id="col">
           </div>
           <div class="mb-3">
-            <label for="ciudad" class="col-form-label">Ciudad:</label>
-            <input type="text" class="form-control" id="ciudad">
+            <label for="city" class="col-form-label">Ciudad:</label>
+            <input type="text" class="form-control" id="city">
           </div>
           <div class="mb-3">
-            <label for="estado" class="col-form-label">Estado:</label>
-            <input type="text" class="form-control" id="estado">
+            <label for="state" class="col-form-label">Estado:</label>
+            <input type="text" class="form-control" id="state">
           </div>
           <div class="mb-3">
-            <label for="numTel" class="col-form-label">Número teléfono:</label>
-            <input type="number" class="form-control" id="numTel">
+            <label for="telNum" class="col-form-label">Número teléfono:</label>
+            <input type="number" class="form-control" id="telNum">
           </div>
           <div class="mb-3">
-            <label for="postcode" class="col-form-label">Código Postal:</label>
-            <input type="number" class="form-control" id="postcode">
+            <label for="cp" class="col-form-label">Código Postal:</label>
+            <input type="number" class="form-control" id="cp">
           </div>
 
 

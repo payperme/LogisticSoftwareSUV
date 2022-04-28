@@ -1,6 +1,16 @@
 var express = require('express');
 var mysql = require('mysql');
 var cors = require('cors');
+var app = express();
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+    next();
+});
+
 
 var app = express();
 app.use(express.json());
@@ -48,7 +58,8 @@ app.post('/api/cliente', (req,res)=>{
       throw error;
 
     }else{
-      res.send(results);
+      Object.assign(data, {id_user: results.insertId })
+      res.send(data);
     }
   });
 });

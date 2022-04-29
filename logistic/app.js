@@ -84,6 +84,7 @@ app.put('/api/cliente/:id_user', (req,res)=>{
   });
 });
 
+//delete de clientes
 app.delete('/api/cliente/:id_user', (req,res)=>{
   conexion.query('DELETE FROM ecClient WHERE id_user = ?', [req.params.id_user], function(error, filas){
     if (error) {
@@ -94,6 +95,64 @@ app.delete('/api/cliente/:id_user', (req,res)=>{
     }
   });
 });
+
+//PAQUETERIA
+//Mostrar datos paqueteria
+
+app.get('/api/paqueteria', (req,res)=>{
+  conexion.query('SELECT * FROM parcel', (error, filas)=>{
+    if (error) {
+      throw error;
+
+    }else{
+      res.send(filas);
+    }
+
+  })
+});
+//Insertar datos en Paqueteria
+app.post('/api/paqueteria', (req,res)=>{
+  let data = {nameParcel:req.body.nameParcel, contact:req.body.contact, telParser:req.body.telParser};
+  let sql = "INSERT INTO parcel SET ?";
+  conexion.query(sql, data, function(error, results){
+    if (error) {
+      throw error;
+
+    }else{
+      Object.assign(data, {idParcel: results.insertId })
+      res.send(data);
+    }
+  });
+});
+
+//Modificar datos de paqueteria
+app.put('/api/paqueteria/:idParcel', (req,res)=>{
+  let idParcel = req.params.idParcel;
+  let nameParcel = req.body.nameParcel;
+  let contact = req.body.contact;
+  let telParser = req.body.telParser;
+  let sql = "UPDATE parcel SET nameParcel = ?, contact = ?, telParser = ? WHERE idParcel = ?";
+  conexion.query(sql, [nameParcel, contact, telParser, idParcel], function(error, results){
+    if (error) {
+      throw error;
+
+    }else{
+      res.send(results);
+    }
+  });
+});
+
+app.delete('/api/paqueteria/:idParcel', (req,res)=>{
+  conexion.query('DELETE FROM parcel WHERE idParcel = ?', [req.params.idParcel], function(error, filas){
+    if (error) {
+      throw error;
+
+    }else{
+      res.send(filas);
+    }
+  });
+});
+
 app.listen('3000', function(){
   console.log("Server: OK");
 });
